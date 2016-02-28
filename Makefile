@@ -2,10 +2,10 @@ CC = llvm-g++
 LIVEFILE = default.cpp
 OF_PATH=..
 PCH_FILE = $(OF_PATH)/libs/openFrameworks/ofMain.h.gch
-ARCH = -arch x86_64
+ARCH = -arch i386
 OF_STATIC_LIB = $(OF_PATH)/libs/openFrameworksCompiled/lib/osx/openFrameworks.a
 
-LD_FLAGS = $(OF_STATIC_LIB) -arch i386 \
+LD_FLAGS = $(OF_STATIC_LIB) \
 				-framework OpenGL \
 				-framework GLUT \
 				-framework Cocoa \
@@ -37,7 +37,7 @@ LD_FLAGS = $(OF_STATIC_LIB) -arch i386 \
 				-F $(OF_PATH)/libs/glut/lib/osx \
 				$(OF_PATH)/libs/fmodex/lib/osx/libfmodex.dylib
 
-INCLUDES = -I$(OF_PATH)/libs/openFrameworks/ \
+INCLUDES = -I$(OF_PATH)/libs/openFrameworks \
 		-I$(OF_PATH)/libs/openFrameworks/3d \
 		-I$(OF_PATH)/libs/openFrameworks/app \
 		-I$(OF_PATH)/libs/openFrameworks/communication \
@@ -62,7 +62,7 @@ INCLUDES = -I$(OF_PATH)/libs/openFrameworks/ \
 
 
 all: $(OF_STATIC_LIB)
-	g++ main.cpp -std=c++11 $(INCLUDES) $(LD_FLAGS) -o livecode
+	g++ main.cpp $(ARCH) -std=c++11 $(INCLUDES) $(LD_FLAGS) -o livecode
 
 $(OF_STATIC_LIB):
 	xcodebuild -configuration Release -project $(OF_PATH)/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj
