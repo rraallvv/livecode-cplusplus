@@ -26,7 +26,7 @@ void reload() {
 	livecodeLib = dlopen("livecode.dylib", RTLD_LAZY);
 	if (livecodeLib == NULL) {
 	   // report error ...
-	   printf("Error: No dice loading livecode.dylib\n");
+	   printf("Error: %s\n", dlerror());
 	} else {
 		// use the result in a call to dlsym
 		printf("Success loading\n");
