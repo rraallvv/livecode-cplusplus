@@ -2,7 +2,7 @@ CC = llvm-g++
 LIVEFILE = default.cpp
 OF_PATH=..
 PCH_FILE = $(OF_PATH)/libs/openFrameworks/ofMain.h.gch
-ARCH = -arch i386
+ARCH = -arch x86_64
 OF_STATIC_LIB = $(OF_PATH)/libs/openFrameworksCompiled/lib/osx/openFrameworks.a
 
 LD_FLAGS = $(OF_STATIC_LIB) \
@@ -74,8 +74,8 @@ $(PCH_FILE):
 
 live: $(PCH_FILE) $(OF_STATIC_LIB)
 	g++ $(LIVEFILE) -std=c++11 -include $(OF_PATH)/libs/openFrameworks/ofMain.h -I$(OF_PATH)/libs/openFrameworks/ $(ARCH) -o livecode.o
-	g++ -I. -dynamiclib $(ARCH) -o livecode.dylib -install_name $(OF_PATH)/livecode-cplusplus/livecode.dylib livecode.o \
-	$(OF_STATIC_LIB) \
+	g++ -I. -dynamiclib $(ARCH) -o livecode.dylib livecode.o \
+		$(OF_STATIC_LIB) \
 		-undefined suppress -flat_namespace
 	rm livecode.o	
 
