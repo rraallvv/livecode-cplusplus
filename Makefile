@@ -76,6 +76,7 @@ live: $(PCH_FILE) $(OF_STATIC_LIB)
 	g++ $(LIVEFILE) -c -std=c++11 -include $(OF_PATH)/libs/openFrameworks/ofMain.h -I$(OF_PATH)/libs/openFrameworks/ $(ARCH) -o livecode.o
 	g++ -I. -dynamiclib $(ARCH) -o livecode.dylib livecode.o \
 		$(OF_STATIC_LIB) \
+		$(OF_PATH)/libs/freetype/lib/osx/freetype.a \
 		-undefined suppress -flat_namespace
 	rm livecode.o	
 
