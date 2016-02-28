@@ -37,7 +37,7 @@ LD_FLAGS = $(OF_STATIC_LIB) \
 				-F $(OF_PATH)/libs/glut/lib/osx \
 				$(OF_PATH)/libs/fmodex/lib/osx/libfmodex.dylib
 
-INCLUDES = -I$(OF_PATH)/libs/openFrameworks \
+INCLUDES = -I$(OF_PATH)/libs/openFrameworks/ \
 		-I$(OF_PATH)/libs/openFrameworks/3d \
 		-I$(OF_PATH)/libs/openFrameworks/app \
 		-I$(OF_PATH)/libs/openFrameworks/communication \
@@ -62,18 +62,18 @@ INCLUDES = -I$(OF_PATH)/libs/openFrameworks \
 
 
 all: $(OF_STATIC_LIB)
-	g++ main.cpp $(ARCH) -std=c++11 $(INCLUDES) $(LD_FLAGS) -o livecode
+	g++ main.cpp -std=c++11 $(INCLUDES) $(LD_FLAGS) $(ARCH) -o livecode
 
 $(OF_STATIC_LIB):
 	xcodebuild -configuration Release -project $(OF_PATH)/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj
 	
 $(PCH_FILE):
 	echo "Precompiling ofMain.h"
-	g++ -std=c++11 $(OF_PATH)/libs/openFrameworks/ofMain.h -c $(ARCH) $(INCLUDES)
+	g++ $(OF_PATH)/libs/openFrameworks/ofMain.h -c -std=c++11 $(ARCH) $(INCLUDES)
 
 
 live: $(PCH_FILE) $(OF_STATIC_LIB)
-	g++ $(LIVEFILE) -std=c++11 -c $(INCLUDES) $(ARCH) -o livecode.o
+	g++ $(LIVEFILE) -c -std=c++11 -I$(OF_PATH)/libs/openFrameworks/ $(ARCH) -o livecode.o
 	g++ -I. -dynamiclib $(ARCH) -o livecode.dylib -install_name $(OF_PATH)/livecode-cplusplus/livecode.dylib livecode.o \
 	$(OF_STATIC_LIB) \
 		-undefined suppress -flat_namespace
