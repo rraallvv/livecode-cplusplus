@@ -69,11 +69,11 @@ $(OF_STATIC_LIB):
 	
 $(PCH_FILE):
 	echo "Precompiling ofMain.h"
-	g++ $(OF_PATH)/libs/openFrameworks/ofMain.h -c -std=c++11 $(ARCH) $(INCLUDES)
+	g++ -x c++-header $(OF_PATH)/libs/openFrameworks/ofMain.h -std=c++11 $(ARCH) $(INCLUDES)
 
 
 live: $(PCH_FILE) $(OF_STATIC_LIB)
-	g++ $(LIVEFILE) -c -std=c++11 -I$(OF_PATH)/libs/openFrameworks/ $(ARCH) -o livecode.o
+	g++ $(LIVEFILE) -std=c++11 -include $(OF_PATH)/libs/openFrameworks/ofMain.h -I$(OF_PATH)/libs/openFrameworks/ $(ARCH) -o livecode.o
 	g++ -I. -dynamiclib $(ARCH) -o livecode.dylib -install_name $(OF_PATH)/livecode-cplusplus/livecode.dylib livecode.o \
 	$(OF_STATIC_LIB) \
 		-undefined suppress -flat_namespace
