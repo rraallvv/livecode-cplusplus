@@ -53,7 +53,7 @@ void recompileAndReload() {
 	system(cmd.c_str());
 	reload();
 	
-	printf("Reload took %ldms\n", ofGetSystemTime() - t);
+	printf("Reload took %llums\n", ofGetSystemTime() - t);
 }
 
 
@@ -109,7 +109,7 @@ class forwarderApp: public ofBaseApp {
 	void mouseMoved( int x, int y ){ app->mouseMoved(x, y); }
 	void mouseDragged( int x, int y, int button ){ app->mouseDragged(x, y, button); }
 	void mousePressed( int x, int y, int button ){ app->mousePressed(x, y, button); }
-	void mouseReleased(){ app->mouseReleased(); }
+	//void mouseReleased(){ app->mouseReleased(); }
 	void mouseReleased(int x, int y, int button ){ app->mouseReleased(x, y, button); }
 	
 	void dragEvent(ofDragInfo dragInfo) { app->dragEvent(dragInfo); }

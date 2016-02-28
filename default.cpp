@@ -4,7 +4,7 @@
 class testApp: public ofBaseApp {
 public:
 	void setup() {
-		ofSetCurrentRenderer(ofPtr<ofBaseRenderer>(new ofGLRenderer(false)));
+		ofSetCurrentRenderer(ofPtr<ofBaseRenderer>(new ofGLRenderer(nullptr)));
 
 		ofSetFrameRate(60);
 		ofBackground(0, 0, 0);
