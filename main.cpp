@@ -21,7 +21,9 @@ void reload() {
 	if(livecodeLib!=NULL) {
 		app->exit();
 		delete app;
-		dlclose(livecodeLib);
+		if(dlclose(livecodeLib)) {
+			printf("Error: %s\n", dlerror());
+		}
 	}
 	livecodeLib = dlopen("livecode.dylib", RTLD_LAZY);
 	if (livecodeLib == NULL) {
