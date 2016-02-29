@@ -13,14 +13,16 @@ Compilation is sped up by creating a compiled header of the main openframeworks 
 
 SETUP
 =====
-1. Clone the repository into your openframeworks directory
-	- cd ~/Documents/openFrameworks
+1. Clone the repository
 	- git clone https://github.com/mazbox/livecode-cplusplus.git
 2. cd into the folder
-4. type "make" to build everything
-5. type ". ./setenv.sh" (note it's dot space dot slash setenv.sh)
-5. type "./livecode" to start the program - the first time it starts up takes a moment.
-6. edit the file livecode.cpp - the app will update every time you save
+3. edit OF_PATH in setenv.sh to point to the openFrameowks path
+4. type ". ./setenv.sh" (note it's dot space dot slash setenv.sh) to set the needed enviroment variables
+5. type "make" to build everything
+6. type "./livecode" to start the program - the first time it starts up takes a moment.
+7. edit the file livecode.cpp - the app will update every time you save
+
+Alternatively you can build the project from Xcode, although you’ll still need to run ./livecode from the command line ro run the demo application.
 
 
 USAGE
