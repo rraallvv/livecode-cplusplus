@@ -23,6 +23,11 @@ void reload() {
 		delete app;
 		if(dlclose(livecodeLib)) {
 			printf("Error: %s\n", dlerror());
+		} else {
+			// TODO:
+			// this is a workaround and needs to be fixed by
+			// finding a way to close the library without calling dlclose twice
+			dlclose(livecodeLib);
 		}
 	}
 	livecodeLib = dlopen("livecode.dylib", RTLD_LAZY);
