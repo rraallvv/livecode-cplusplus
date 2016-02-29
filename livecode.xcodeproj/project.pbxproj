@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		E476D7F81C849467006DF72F /* default.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = default.cpp; path = ../default.cpp; sourceTree = "<group>"; };
-		E476D7F91C849467006DF72F /* livecode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = livecode.cpp; path = ../livecode.cpp; sourceTree = "<group>"; };
-		E476D7FA1C849467006DF72F /* livecode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = livecode.h; path = ../livecode.h; sourceTree = "<group>"; };
-		E476D7FB1C849467006DF72F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../main.cpp; sourceTree = "<group>"; };
-		E476D7FC1C849467006DF72F /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; name = Makefile; path = ../Makefile; sourceTree = "<group>"; };
-		E476D7FD1C849467006DF72F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		E476D7FE1C849467006DF72F /* setenv.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = setenv.sh; path = ../setenv.sh; sourceTree = "<group>"; };
-		E476D80D1C849863006DF72F /* livecode */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = livecode; path = ../livecode; sourceTree = "<group>"; };
-		E476D8151C84AAD5006DF72F /* livecode.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = livecode.dylib; path = ../livecode.dylib; sourceTree = "<group>"; };
+		E476D7F81C849467006DF72F /* default.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = default.cpp; sourceTree = "<group>"; };
+		E476D7F91C849467006DF72F /* livecode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = livecode.cpp; sourceTree = "<group>"; };
+		E476D7FA1C849467006DF72F /* livecode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = livecode.h; sourceTree = "<group>"; };
+		E476D7FB1C849467006DF72F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E476D7FC1C849467006DF72F /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		E476D7FD1C849467006DF72F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E476D7FE1C849467006DF72F /* setenv.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = setenv.sh; sourceTree = "<group>"; };
+		E476D80D1C849863006DF72F /* livecode */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = livecode; sourceTree = "<group>"; };
+		E476D8151C84AAD5006DF72F /* livecode.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = livecode.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -44,7 +44,7 @@
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
-			buildWorkingDirectory = "$(PROJECT_DIR)/..";
+			buildWorkingDirectory = "$(PROJECT_DIR)";
 			dependencies = (
 			);
 			name = livecode;
@@ -118,7 +118,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OF_PATH = "$(PROJECT_DIR)/../..";
+				OF_PATH = "$(PROJECT_DIR)/..";
 				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
@@ -153,7 +153,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OF_PATH = "$(PROJECT_DIR)/../..";
+				OF_PATH = "$(PROJECT_DIR)/..";
 			};
 			name = Release;
 		};
