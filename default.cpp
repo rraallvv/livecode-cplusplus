@@ -13,15 +13,18 @@ public:
 		ofSetWindowPosition(0,0);
 	}
 	
-	
 	void draw() {
+		static int r = 0;
+		r++;
+		r = r % 256;
+		ofBackground(r, r, r);
+
 		for(int j = 0; j < 10; j++) {
 			ofSetColor(j*25, 20-j*10, 100-j*25, 255);
 			
 			ofBeginShape();
 			ofVertex(ofGetWidth(), 0);
 			ofVertex(0,0);
-			
 
 			for(int i = 0; i < ofGetWidth(); i+=4) {
 				float xRange = ofGetHeight() - j*40;
