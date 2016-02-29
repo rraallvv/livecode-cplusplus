@@ -14,6 +14,7 @@
 		E476D7FC1C849467006DF72F /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; name = Makefile; path = ../Makefile; sourceTree = "<group>"; };
 		E476D7FD1C849467006DF72F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E476D7FE1C849467006DF72F /* setenv.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = setenv.sh; path = ../setenv.sh; sourceTree = "<group>"; };
+		E476D80D1C849863006DF72F /* livecode */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = livecode; path = ../livecode; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -27,6 +28,7 @@
 				E476D7FC1C849467006DF72F /* Makefile */,
 				E476D7FD1C849467006DF72F /* README.md */,
 				E476D7FE1C849467006DF72F /* setenv.sh */,
+				E476D80D1C849863006DF72F /* livecode */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +116,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				OF_PATH = "$(PROJECT_DIR)/../..";
 				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
@@ -148,6 +151,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OF_PATH = "$(PROJECT_DIR)/../..";
 			};
 			name = Release;
 		};

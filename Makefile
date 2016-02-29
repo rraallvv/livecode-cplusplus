@@ -1,9 +1,9 @@
 CC = llvm-g++
 LIVEFILE = default.cpp
-OF_PATH=..
 PCH_FILE = $(OF_PATH)/libs/openFrameworks/ofMain.h.gch
-ARCH = -arch x86_64
+ARCH = $(arch)
 OF_STATIC_LIB = $(OF_PATH)/libs/openFrameworksCompiled/lib/osx/openFrameworks.a
+
 
 LD_FLAGS = $(OF_STATIC_LIB) \
 				-framework OpenGL \
@@ -62,19 +62,19 @@ INCLUDES = -I$(OF_PATH)/libs/openFrameworks/ \
 
 
 all: $(OF_STATIC_LIB)
-	g++ main.cpp livecode.cpp -std=c++11 $(INCLUDES) $(LD_FLAGS) $(ARCH) -o livecode
+	g++ main.cpp livecode.cpp -std=c++11 $(INCLUDES) $(LD_FLAGS) -arch $(ARCH) -o livecode
 
 $(OF_STATIC_LIB):
 	xcodebuild -configuration Release -project $(OF_PATH)/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj
 	
 $(PCH_FILE):
 	echo "Precompiling ofMain.h"
-	g++ -x c++-header $(OF_PATH)/libs/openFrameworks/ofMain.h -c -std=c++11 $(ARCH) $(INCLUDES)
+	g++ -x c++-header $(OF_PATH)/libs/openFrameworks/ofMain.h -c -std=c++11 -arch $(ARCH) $(INCLUDES)
 
 
 live: $(PCH_FILE) $(OF_STATIC_LIB)
-	g++ $(LIVEFILE) -c -std=c++11 -include $(OF_PATH)/libs/openFrameworks/ofMain.h -I$(OF_PATH)/libs/openFrameworks/ $(ARCH) -o livecode.o
-	g++ -I. -dynamiclib $(ARCH) -o livecode.dylib livecode.o \
+	g++ $(LIVEFILE) -c -std=c++11 -include $(OF_PATH)/libs/openFrameworks/ofMain.h -I$(OF_PATH)/libs/openFrameworks/ -arch $(ARCH) -o livecode.o
+	g++ -I. -dynamiclib -arch $(ARCH) -o livecode.dylib livecode.o \
 		$(OF_STATIC_LIB) \
 		$(OF_PATH)/libs/freetype/lib/osx/freetype.a \
 		-undefined suppress -flat_namespace
