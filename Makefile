@@ -62,7 +62,7 @@ INCLUDES = -I$(OF_PATH)/libs/openFrameworks/ \
 
 
 all: $(OF_STATIC_LIB)
-	g++ main.cpp -std=c++11 $(INCLUDES) $(LD_FLAGS) $(ARCH) -o livecode
+	g++ main.cpp livecode.cpp -std=c++11 $(INCLUDES) $(LD_FLAGS) $(ARCH) -o livecode
 
 $(OF_STATIC_LIB):
 	xcodebuild -configuration Release -project $(OF_PATH)/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj
