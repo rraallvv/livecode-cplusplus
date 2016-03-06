@@ -7,31 +7,63 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		E476D7F81C849467006DF72F /* default.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = default.cpp; sourceTree = "<group>"; };
-		E476D7F91C849467006DF72F /* livecode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = livecode.cpp; sourceTree = "<group>"; };
-		E476D7FA1C849467006DF72F /* livecode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = livecode.h; sourceTree = "<group>"; };
 		E476D7FB1C849467006DF72F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E476D7FC1C849467006DF72F /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		E476D7FD1C849467006DF72F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E476D7FE1C849467006DF72F /* setenv.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = setenv.sh; sourceTree = "<group>"; };
 		E476D80D1C849863006DF72F /* livecode */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = livecode; sourceTree = "<group>"; };
 		E476D8151C84AAD5006DF72F /* livecode.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = livecode.dylib; sourceTree = "<group>"; };
+		E4E705A31C8BC1D7007120E6 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
+		E4E705A41C8BC1D7007120E6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E4E705A51C8BC1D7007120E6 /* default.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = default.cpp; sourceTree = "<group>"; };
+		E4E705A61C8BC1D7007120E6 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
+		E4E705A71C8BC1D7007120E6 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
+		E4E705A81C8BC1D7007120E6 /* livecode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = livecode.cpp; sourceTree = "<group>"; };
+		E4E705A91C8BC1D7007120E6 /* livecode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = livecode.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		E476D7ED1C84929A006DF72F = {
 			isa = PBXGroup;
 			children = (
-				E476D7F81C849467006DF72F /* default.cpp */,
-				E476D7F91C849467006DF72F /* livecode.cpp */,
-				E476D7FA1C849467006DF72F /* livecode.h */,
+				E4E705A21C8BC1D7007120E6 /* Classes */,
+				E4E7059C1C8BC1A8007120E6 /* Support */,
+				E4E705AA1C8BC1E2007120E6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E4E7059C1C8BC1A8007120E6 /* Support */ = {
+			isa = PBXGroup;
+			children = (
 				E476D7FB1C849467006DF72F /* main.cpp */,
 				E476D7FC1C849467006DF72F /* Makefile */,
 				E476D7FD1C849467006DF72F /* README.md */,
 				E476D7FE1C849467006DF72F /* setenv.sh */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		E4E705A21C8BC1D7007120E6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E4E705A31C8BC1D7007120E6 /* AppDelegate.cpp */,
+				E4E705A41C8BC1D7007120E6 /* AppDelegate.h */,
+				E4E705A51C8BC1D7007120E6 /* default.cpp */,
+				E4E705A61C8BC1D7007120E6 /* HelloWorldScene.cpp */,
+				E4E705A71C8BC1D7007120E6 /* HelloWorldScene.h */,
+				E4E705A81C8BC1D7007120E6 /* livecode.cpp */,
+				E4E705A91C8BC1D7007120E6 /* livecode.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E4E705AA1C8BC1E2007120E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
 				E476D80D1C849863006DF72F /* livecode */,
 				E476D8151C84AAD5006DF72F /* livecode.dylib */,
 			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
