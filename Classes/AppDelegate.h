@@ -9,7 +9,6 @@ class forwarderApp: public ofBaseApp {
 	ofBaseApp *app;
 	long prevUpdateTime = 0;
 	float lastTimeChecked = 0;
-	string livefile;
 	void *livecodeLib = NULL;
 	ofAppGlutWindow window;
 
@@ -57,6 +56,8 @@ The reason for implement as private inheritance is to hide some interface call b
 */
 class  AppDelegate : private cocos2d::Application
 {
+	std::string livefile;
+
 public:
     AppDelegate();
     virtual ~AppDelegate();
