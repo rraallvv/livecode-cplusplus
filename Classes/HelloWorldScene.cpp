@@ -24,7 +24,7 @@ void HelloWorld::checkAndUpdate(float dt) {
 }
 
 void HelloWorld::recompileAndReload() {
-	long t = time(NULL);
+	clock_t t = clock();
 
 	// call our makefile
 	std::string cmd = "make -C ../../ live LIVEFILE=";
@@ -32,7 +32,7 @@ void HelloWorld::recompileAndReload() {
 	system(cmd.c_str());
 	reload();
 
-	printf("Reload took %ldums\n", time(NULL) - t);
+	printf("Reload took %.0fms\n", (clock() - t) / (float)CLOCKS_PER_SEC * 1000);
 }
 
 void HelloWorld::reload() {
