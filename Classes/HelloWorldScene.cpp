@@ -2,9 +2,70 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
+#include <sys/stat.h>
+#include <dlfcn.h>
+
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
+
+void HelloWorld::checkAndUpdate(float dt) {
+	struct stat fileStat;
+	if(stat(livefile.c_str(), &fileStat) < 0) {
+		printf("Couldn't stat file\n");
+		return;
+	}
+	long currUpdateTime = fileStat.st_mtime;
+	if(currUpdateTime!=prevUpdateTime) {
+		printf("Compile reload\n");
+		recompileAndReload();
+	}
+	prevUpdateTime = currUpdateTime;
+}
+
+void HelloWorld::recompileAndReload() {
+	long t = time(NULL);
+
+	// call our makefile
+	std::string cmd = "make live LIVEFILE=";
+	cmd += livefile;
+	system(cmd.c_str());
+	reload();
+
+	printf("Reload took %ldums\n", time(NULL) - t);
+}
+
+void HelloWorld::reload() {
+	// don't forget to clean up
+	if(livecodeLib!=NULL) {
+		if(dlclose(livecodeLib)) {
+			printf("Error: %s\n", dlerror());
+		} else {
+			// TODO:
+			// this is a workaround and needs to be fixed by
+			// finding a way to close the library without calling dlclose twice
+			dlclose(livecodeLib);
+		}
+	}
+	livecodeLib = dlopen("AppDelegate.dylib", RTLD_LAZY);
+	if (livecodeLib == NULL) {
+		// report error ...
+		printf("Error: %s\n", dlerror());
+	} else {
+		// use the result in a call to dlsym
+		printf("Success loading\n");
+
+
+		void *ptrFunc = dlsym(livecodeLib, "getAppPtr");
+		if(ptrFunc!=NULL) {
+
+			livecodeFun = (void (*)(void))ptrFunc;
+			livecodeFun();
+		} else {
+			printf("Couldn't find the getAppPtr() function\n");
+		}
+	}
+}
 
 Scene* HelloWorld::createScene()
 {
@@ -87,6 +148,10 @@ bool HelloWorld::init()
     auto rootNode = CSLoader::createNode("MainScene.csb");
 
     addChild(rootNode);
+
+	livefile = "livecode.cpp";
+	livecodeFun = nullptr;
+	this->schedule(schedule_selector(HelloWorld::checkAndUpdate), 1.0f);
 
     return true;
 }

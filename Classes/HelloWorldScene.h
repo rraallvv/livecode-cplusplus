@@ -5,6 +5,15 @@
 
 class HelloWorld : public cocos2d::Layer
 {
+	std::string livefile;
+	long prevUpdateTime = 0;
+	void *livecodeLib = NULL;
+	void (*livecodeFun)(void);
+
+	void recompileAndReload();
+	void reload();
+	void checkAndUpdate(float dt);
+
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
