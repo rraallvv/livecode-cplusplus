@@ -15,7 +15,7 @@
 		E476D8151C84AAD5006DF72F /* livecode.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = livecode.dylib; sourceTree = "<group>"; };
 		E4E705A31C8BC1D7007120E6 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		E4E705A41C8BC1D7007120E6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E4E705A51C8BC1D7007120E6 /* default.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = default.cpp; sourceTree = "<group>"; };
+		E4E705A51C8BC1D7007120E6 /* livecode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = livecode.cpp; sourceTree = "<group>"; };
 		E4E705A61C8BC1D7007120E6 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
 		E4E705A71C8BC1D7007120E6 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -46,7 +46,7 @@
 			children = (
 				E4E705A31C8BC1D7007120E6 /* AppDelegate.cpp */,
 				E4E705A41C8BC1D7007120E6 /* AppDelegate.h */,
-				E4E705A51C8BC1D7007120E6 /* default.cpp */,
+				E4E705A51C8BC1D7007120E6 /* livecode.cpp */,
 				E4E705A61C8BC1D7007120E6 /* HelloWorldScene.cpp */,
 				E4E705A71C8BC1D7007120E6 /* HelloWorldScene.h */,
 			);
