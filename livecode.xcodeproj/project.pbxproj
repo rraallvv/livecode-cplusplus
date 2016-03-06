@@ -18,8 +18,6 @@
 		E4E705A51C8BC1D7007120E6 /* default.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = default.cpp; sourceTree = "<group>"; };
 		E4E705A61C8BC1D7007120E6 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
 		E4E705A71C8BC1D7007120E6 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
-		E4E705A81C8BC1D7007120E6 /* livecode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = livecode.cpp; sourceTree = "<group>"; };
-		E4E705A91C8BC1D7007120E6 /* livecode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = livecode.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -51,8 +49,6 @@
 				E4E705A51C8BC1D7007120E6 /* default.cpp */,
 				E4E705A61C8BC1D7007120E6 /* HelloWorldScene.cpp */,
 				E4E705A71C8BC1D7007120E6 /* HelloWorldScene.h */,
-				E4E705A81C8BC1D7007120E6 /* livecode.cpp */,
-				E4E705A91C8BC1D7007120E6 /* livecode.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
