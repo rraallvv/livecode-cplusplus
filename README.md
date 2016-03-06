@@ -16,7 +16,7 @@ SETUP
 1. Clone the repository
 	- git clone https://github.com/mazbox/livecode-cplusplus.git
 2. cd into the folder
-3. edit OF_PATH in setenv.sh to point to the openFrameowks path
+3. edit CC_PATH in setenv.sh to point to the openFrameowks path
 4. type ". ./setenv.sh" (note it's dot space dot slash setenv.sh) to set the needed enviroment variables
 5. type "make" to build everything
 6. type "./livecode" to start the program - the first time it starts up takes a moment.

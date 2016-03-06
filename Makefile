@@ -1,87 +1,83 @@
 CC = llvm-g++
 LIVEFILE = default.cpp
-PCH_FILE = $(OF_PATH)/libs/openFrameworks/ofMain.h.gch
+PCH_FILE = $(CC_PATH)/cocos/cocos2d.h
 ARCH = $(arch)
-OF_STATIC_LIB = $(OF_PATH)/libs/openFrameworksCompiled/lib/osx/openFrameworks.a
+CC_STATIC_LIB = "$(CC_PATH)/prebuilt/mac/libcocos2d Mac.a"
 
 
-LD_FLAGS = $(OF_STATIC_LIB) \
-				-framework OpenGL \
-				-framework GLUT \
-				-framework Cocoa \
-				-framework CoreAudio \
-				-framework CoreVideo \
-				-framework IOkit \
-				$(OF_PATH)/libs/cairo/lib/osx/cairo.a \
-				$(OF_PATH)/libs/cairo/lib/osx/pixman-1.a \
-				$(OF_PATH)/libs/poco/lib/osx/PocoCrypto.a \
-				$(OF_PATH)/libs/poco/lib/osx/PocoDataSQLite.a \
-				$(OF_PATH)/libs/poco/lib/osx/PocoNetSSL.a \
-				$(OF_PATH)/libs/poco/lib/osx/PocoZip.a \
-				$(OF_PATH)/libs/poco/lib/osx/PocoData.a \
-				$(OF_PATH)/libs/poco/lib/osx/PocoFoundation.a \
-				$(OF_PATH)/libs/poco/lib/osx/PocoUtil.a \
-				$(OF_PATH)/libs/poco/lib/osx/PocoNet.a \
-				$(OF_PATH)/libs/poco/lib/osx/PocoXML.a \
-				$(OF_PATH)/libs/poco/lib/osx/PocoJSON.a \
-				$(OF_PATH)/libs/poco/lib/osx/PocoMongoDB.a \
-				$(OF_PATH)/libs/freetype/lib/osx/freetype.a \
-				$(OF_PATH)/libs/FreeImage/lib/osx/freeimage.a \
-				$(OF_PATH)/libs/boost/lib/osx/boost.a \
-				$(OF_PATH)/libs/boost/lib/osx/boost_system.a \
-				$(OF_PATH)/libs/glew/lib/osx/glew.a \
-				$(OF_PATH)/libs/glfw/lib/osx/glfw3.a \
-				$(OF_PATH)/libs/tess2/lib/osx/tess2.a \
-				-lcrypto \
-				-lssl \
-				-F $(OF_PATH)/libs/glut/lib/osx \
-				$(OF_PATH)/libs/fmodex/lib/osx/libfmodex.dylib
+LD_FLAGS = $(CC_STATIC_LIB) \
+	-framework OpenGL \
+	-framework GLUT \
+	-framework Cocoa \
+	-framework CoreAudio \
+	-framework CoreVideo \
+	-framework IOkit \
+	$(CC_PATH)/libs/cairo/lib/osx/cairo.a \
+	$(CC_PATH)/libs/cairo/lib/osx/pixman-1.a \
+	$(CC_PATH)/libs/poco/lib/osx/PocoCrypto.a \
+	$(CC_PATH)/libs/poco/lib/osx/PocoDataSQLite.a \
+	$(CC_PATH)/libs/poco/lib/osx/PocoNetSSL.a \
+	$(CC_PATH)/libs/poco/lib/osx/PocoZip.a \
+	$(CC_PATH)/libs/poco/lib/osx/PocoData.a \
+	$(CC_PATH)/libs/poco/lib/osx/PocoFoundation.a \
+	$(CC_PATH)/libs/poco/lib/osx/PocoUtil.a \
+	$(CC_PATH)/libs/poco/lib/osx/PocoNet.a \
+	$(CC_PATH)/libs/poco/lib/osx/PocoXML.a \
+	$(CC_PATH)/libs/poco/lib/osx/PocoJSON.a \
+	$(CC_PATH)/libs/poco/lib/osx/PocoMongoDB.a \
+	$(CC_PATH)/libs/freetype/lib/osx/freetype.a \
+	$(CC_PATH)/libs/FreeImage/lib/osx/freeimage.a \
+	$(CC_PATH)/libs/boost/lib/osx/boost.a \
+	$(CC_PATH)/libs/boost/lib/osx/boost_system.a \
+	$(CC_PATH)/libs/glew/lib/osx/glew.a \
+	$(CC_PATH)/libs/glfw/lib/osx/glfw3.a \
+	$(CC_PATH)/libs/tess2/lib/osx/tess2.a \
+	-lcrypto \
+	-lssl \
+	-F $(CC_PATH)/libs/glut/lib/osx \
+	$(CC_PATH)/libs/fmodex/lib/osx/libfmodex.dylib
 
-INCLUDES = -I$(OF_PATH)/libs/openFrameworks/ \
-		-I$(OF_PATH)/libs/openFrameworks/3d \
-		-I$(OF_PATH)/libs/openFrameworks/app \
-		-I$(OF_PATH)/libs/openFrameworks/communication \
-		-I$(OF_PATH)/libs/openFrameworks/events \
-		-I$(OF_PATH)/libs/openFrameworks/gl \
-		-I$(OF_PATH)/libs/openFrameworks/graphics \
-		-I$(OF_PATH)/libs/openFrameworks/math \
-		-I$(OF_PATH)/libs/openFrameworks/sound \
-		-I$(OF_PATH)/libs/openFrameworks/types \
-		-I$(OF_PATH)/libs/openFrameworks/utils \
-		-I$(OF_PATH)/libs/openFrameworks/video \
-		-I$(OF_PATH)/libs/glew/include \
-		-I$(OF_PATH)/libs/tess2/include \
-		-I$(OF_PATH)/libs/cairo/include/cairo \
-		-I$(OF_PATH)/libs/fmodex/include \
-		-I$(OF_PATH)/libs/poco/include \
-		-I$(OF_PATH)/libs/json/include \
-		-I$(OF_PATH)/libs/utf8cpp/include \
-		-I$(OF_PATH)/libs/openFrameworks/utils \
-		-I$(OF_PATH)/libs/boost/include \
-		-I$(OF_PATH)/libs/glfw/include
+INCLUDES = -I$(CC_PATH)/libs/openFrameworks/ \
+	-I$(CC_PATH)/libs/openFrameworks/3d \
+	-I$(CC_PATH)/libs/openFrameworks/app \
+	-I$(CC_PATH)/libs/openFrameworks/communication \
+	-I$(CC_PATH)/libs/openFrameworks/events \
+	-I$(CC_PATH)/libs/openFrameworks/gl \
+	-I$(CC_PATH)/libs/openFrameworks/graphics \
+	-I$(CC_PATH)/libs/openFrameworks/math \
+	-I$(CC_PATH)/libs/openFrameworks/sound \
+	-I$(CC_PATH)/libs/openFrameworks/types \
+	-I$(CC_PATH)/libs/openFrameworks/utils \
+	-I$(CC_PATH)/libs/openFrameworks/video \
+	-I$(CC_PATH)/libs/glew/include \
+	-I$(CC_PATH)/libs/tess2/include \
+	-I$(CC_PATH)/libs/cairo/include/cairo \
+	-I$(CC_PATH)/libs/fmodex/include \
+	-I$(CC_PATH)/libs/poco/include \
+	-I$(CC_PATH)/libs/json/include \
+	-I$(CC_PATH)/libs/utf8cpp/include \
+	-I$(CC_PATH)/libs/openFrameworks/utils \
+	-I$(CC_PATH)/libs/boost/include \
+	-I$(CC_PATH)/libs/glfw/include
 
 
-all: $(OF_STATIC_LIB)
+all:
 	g++ main.cpp livecode.cpp -std=c++11 $(INCLUDES) $(LD_FLAGS) -arch $(ARCH) -o livecode
 
-$(OF_STATIC_LIB):
-	xcodebuild -configuration Release -project $(OF_PATH)/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj
-	
 $(PCH_FILE):
 	echo "Precompiling ofMain.h"
-	g++ -x c++-header $(OF_PATH)/libs/openFrameworks/ofMain.h -c -std=c++11 -arch $(ARCH) $(INCLUDES)
+	g++ -x c++-header $(CC_PATH)/libs/openFrameworks/ofMain.h -c -std=c++11 -arch $(ARCH) $(INCLUDES)
 
 
-live: $(PCH_FILE) $(OF_STATIC_LIB)
-	g++ $(LIVEFILE) -c -std=c++11 -include $(OF_PATH)/libs/openFrameworks/ofMain.h -I$(OF_PATH)/libs/openFrameworks/ -arch $(ARCH) -o livecode.o
+live: $(PCH_FILE)
+	g++ $(LIVEFILE) -c -std=c++11 -include $(CC_PATH)/libs/openFrameworks/ofMain.h -I$(CC_PATH)/libs/openFrameworks/ -arch $(ARCH) -o livecode.o
 	g++ -I. -dynamiclib -arch $(ARCH) -o livecode.dylib livecode.o \
-		$(OF_STATIC_LIB) \
-		$(OF_PATH)/libs/freetype/lib/osx/freetype.a \
+		$(CC_STATIC_LIB) \
+		$(CC_PATH)/libs/freetype/lib/osx/freetype.a \
 		-undefined suppress -flat_namespace
 	rm livecode.o	
 
 
 clean:
-	rm $(OF_STATIC_LIB)
 	rm $(PCH_FILE)
 	rm livecode.dylib
