@@ -4,7 +4,7 @@
 #include <sys/stat.h>
 #include "ofMain.h"
 
-#include "livecode.h"
+#include "AppDelegate.h"
 
 forwarderApp::forwarderApp(string livefile, ofAppGlutWindow& window):livefile(livefile),window(window) {
 	app = new ofBaseApp();
@@ -24,7 +24,7 @@ void forwarderApp::reload() {
 			dlclose(livecodeLib);
 		}
 	}
-	livecodeLib = dlopen("livecode.dylib", RTLD_LAZY);
+	livecodeLib = dlopen("AppDelegate.dylib", RTLD_LAZY);
 	if (livecodeLib == NULL) {
 		// report error ...
 		printf("Error: %s\n", dlerror());
@@ -82,7 +82,7 @@ void forwarderApp::idle(void) {
 	}
 }
 
-#include "livecode.h"
+#include "AppDelegate.h"
 
 int main(int argc, char** argv) {
 

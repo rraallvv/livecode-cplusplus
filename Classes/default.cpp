@@ -44,7 +44,7 @@ public:
 	}
 };
 
-// required by livecode-c++ to workls
+// required by AppDelegate-c++ to workls
 extern "C" {	
 	ofBaseApp *getAppPtr(ofAppBaseWindow *win) {
 		return new testApp();

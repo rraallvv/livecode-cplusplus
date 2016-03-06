@@ -1,3 +1,4 @@
 *.dylib
 livecode
 **xcuserdata*
+Contents/MacOS
