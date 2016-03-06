@@ -23,7 +23,7 @@ LD_FLAGS = $(CC_STATIC_LIB) \
 
 
 all:
-	g++ main.cpp Classes/AppDelegate.cpp Classes/HelloWorldScene.cpp -std=c++11 $(INCLUDES) $(LD_FLAGS) -arch $(ARCH) -o Contents/MacOS/AppDelegate
+	g++ main.cpp Classes/AppDelegate.cpp Classes/HelloWorldScene.cpp -std=c++11 $(INCLUDES) $(LD_FLAGS) -arch $(ARCH) -o Contents/MacOS/livecode
 
 $(PCH_FILE):
 	echo "Precompiling ofMain.h"
