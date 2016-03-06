@@ -11,7 +11,7 @@ using namespace cocostudio::timeline;
 
 void HelloWorld::checkAndUpdate(float dt) {
 	struct stat fileStat;
-	if(stat(livefile.c_str(), &fileStat) < 0) {
+	if(stat(("../../" + livefile).c_str(), &fileStat) < 0) {
 		printf("Couldn't stat file\n");
 		return;
 	}
@@ -27,7 +27,7 @@ void HelloWorld::recompileAndReload() {
 	long t = time(NULL);
 
 	// call our makefile
-	std::string cmd = "make live LIVEFILE=";
+	std::string cmd = "make -C ../../ live LIVEFILE=";
 	cmd += livefile;
 	system(cmd.c_str());
 	reload();
@@ -47,7 +47,7 @@ void HelloWorld::reload() {
 			dlclose(livecodeLib);
 		}
 	}
-	livecodeLib = dlopen("AppDelegate.dylib", RTLD_LAZY);
+	livecodeLib = dlopen("../../Contents/MacOS/livecode.dylib", RTLD_LAZY);
 	if (livecodeLib == NULL) {
 		// report error ...
 		printf("Error: %s\n", dlerror());
@@ -56,13 +56,13 @@ void HelloWorld::reload() {
 		printf("Success loading\n");
 
 
-		void *ptrFunc = dlsym(livecodeLib, "getAppPtr");
+		void *ptrFunc = dlsym(livecodeLib, "livecode");
 		if(ptrFunc!=NULL) {
 
 			livecodeFun = (void (*)(void))ptrFunc;
 			livecodeFun();
 		} else {
-			printf("Couldn't find the getAppPtr() function\n");
+			printf("Couldn't find the livecode() function\n");
 		}
 	}
 }
@@ -149,7 +149,7 @@ bool HelloWorld::init()
 
     addChild(rootNode);
 
-	livefile = "livecode.cpp";
+	livefile = "Classes/livecode.cpp";
 	livecodeFun = nullptr;
 	this->schedule(schedule_selector(HelloWorld::checkAndUpdate), 1.0f);
 

@@ -46,9 +46,9 @@
 			children = (
 				E4E705A31C8BC1D7007120E6 /* AppDelegate.cpp */,
 				E4E705A41C8BC1D7007120E6 /* AppDelegate.h */,
-				E4E705A51C8BC1D7007120E6 /* livecode.cpp */,
 				E4E705A61C8BC1D7007120E6 /* HelloWorldScene.cpp */,
 				E4E705A71C8BC1D7007120E6 /* HelloWorldScene.h */,
+				E4E705A51C8BC1D7007120E6 /* livecode.cpp */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
